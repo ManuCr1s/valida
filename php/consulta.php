@@ -8,7 +8,7 @@ $resultado=$db->query($select);
 if($resultado->num_rows > 0){
     while ($result = mysqli_fetch_array($resultado)) {
         $message = array(
-            'consulta'=>'Documento validado',
+            'consulta'=>'Encontrado',
             'opcion'=>1,
             'tipo'=>$result['doc_description'],
             'siglas'=>$result['siglas'],
