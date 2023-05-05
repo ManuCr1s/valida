@@ -30,7 +30,7 @@ $(document).ready(function(){
                 if(response.opcion == 1){
                     swal({
                         title: "¡Validacion exitosa!",
-                        text: response.consulta+' '+response.tipo+' '+response.siglas+' '+'; documento validado por la Honorable Municipalidad de Pasco',
+                        text: response.consulta+' '+response.tipo+' N°'+response.num+response.siglas+' '+'; documento validado por la Honorable Municipalidad de Pasco',
                         icon: "success",
                         button: "Ingrese Nuevo codigo",
                       }).then(function(){

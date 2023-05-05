@@ -3,7 +3,7 @@ if(isset($_POST)){
 	$codigo = $_POST['cod_valida'];
 }
 require_once 'conexion.php';
-$select="SELECT ty.doc_description,cd.siglas FROM code_doc cd INNER JOIN type_doc ty ON ty.id_type_doc = cd.doc_type where cod_valida ='$codigo'";
+$select="SELECT ty.doc_description,cd.num_doc,cd.siglas FROM code_doc cd INNER JOIN type_doc ty ON ty.id_type_doc = cd.doc_type where cod_valida ='$codigo'";
 $resultado=$db->query($select);
 if($resultado->num_rows > 0){
     while ($result = mysqli_fetch_array($resultado)) {
@@ -11,7 +11,8 @@ if($resultado->num_rows > 0){
             'consulta'=>'Documento validado',
             'opcion'=>1,
             'tipo'=>$result['doc_description'],
-            'siglas'=>$result['siglas']
+            'siglas'=>$result['siglas'],
+            'num'=>$result['num_doc']
         );
      }
 	echo json_encode($message);
