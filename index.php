@@ -11,5 +11,6 @@
         default:
             http_response_code(404);
             echo 'Pagina no encontrada';
+            echo $_SERVER['REQUEST_URI'];
             break;
     }
