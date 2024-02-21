@@ -21,11 +21,10 @@ $(document).ready(function(){
         event.preventDefault();
         let dates = $(this).serialize();
         $.ajax({
-            url:'php/consulta.php',
+            url:'app/controllers/documentController.php',
             type:'POST',
             data:dates,
             success:function(response){
-                console.log(response);
                 var response = jQuery.parseJSON(response);
                 if(response.opcion == 1){
                     swal({
