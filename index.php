@@ -8,6 +8,10 @@
             $controller = new pageControllers();
             $controller->home();
             break;
+        case '/valida':
+            $controller = new pageControllers();
+            $controller->home();
+            break;
         default:
             http_response_code(404);
             echo 'Pagina no encontrada';
