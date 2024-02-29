@@ -14,7 +14,9 @@
             $controller->home();
             break;
         default:
-            http_response_code(404);
-            echo 'Pagina no encontrada';
+            echo $uri;
+            
+            //http_response_code(404);
+           // echo 'Pagina no encontrada';
             break;
     }
